@@ -1,0 +1,289 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Fully transparent track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888; /* Gray color for the thumb */
+  border-radius: 10px;
+  border: 2px solid transparent; /* Transparent border for some spacing */
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Darker on hover */
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #fdfdfd;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  padding: 0;
+}
+
+/* Header Styles */
+header {
+  width: 100%;
+  padding: 15px 0;
+  background-color: #fdfdfd;
+  border-bottom: 1px solid #dcdcdc;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.header-link {
+  font-size: 2rem;
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: color 0.3s, transform 0.3s;
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 12px;
+}
+
+.header-link:hover {
+  color: #2ecc71;
+  transform: translateY(-3px);
+}
+
+.header-link:active {
+  background-color: transparent;
+}
+
+/* Container Styles */
+.container {
+  max-width: 600px;
+  width: 100%;
+  padding: 30px;
+  margin-top: 40px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h2 {
+  color: #333;
+  font-size: 1.75rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.file-input {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: #333;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.file-input::file-selector-button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.file-input::file-selector-button:hover {
+  background-color: #2980b9;
+}
+
+#fileList {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+#fileList li {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 10px 0;
+  padding: 15px 20px;
+  font-size: 1rem;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+  cursor: grab;
+  display: flex;
+  align-items: center;
+}
+
+/* Dragging Ghost */
+#fileList li.dragging {
+  opacity: 0.6;
+  cursor: grabbing;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Placeholder for Drop Position */
+#fileList li.drag-over {
+  border: 2px dashed #3498db;
+  background-color: #eaf6ff;
+}
+
+/* Drag Pointer */
+.drag-handle {
+  width: 20px;
+  height: 20px;
+  background-image: url('drag-icon.svg'); /* Replace with the path to your custom drag pointer */
+  background-size: cover;
+  cursor: grab;
+  margin-right: 15px;
+}
+
+.drag-handle:hover {
+  cursor: grabbing;
+}
+
+/* Highlight active item being dragged */
+#fileList li.active {
+  background-color: #f0f0f0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth transition for surrounding items */
+#fileList li {
+  transition: transform 0.3s ease-in-out;
+}
+
+.remove-btn {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.remove-btn:hover {
+  background-color: #c0392b;
+}
+
+.remove-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.5);
+}
+
+/* Button Group Styles */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+#mergeButton,
+#clearAllButton {
+  padding: 14px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+#mergeButton {
+  background-color: #3498db;
+  color: #fff;
+}
+
+#mergeButton:hover {
+  background-color: #2980b9;
+  transform: translateY(-1px);
+}
+
+#clearAllButton {
+  background-color: #f1c40f;
+  color: #333;
+}
+
+#clearAllButton:hover {
+  background-color: #f39c12;
+  transform: translateY(-1px);
+}
+
+/* Floating Warning Styles */
+.floating-warning {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #e74c3c;
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(-20px);
+  visibility: hidden;
+  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0s linear 0.4s;
+}
+
+.floating-warning.show {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.floating-warning.hide {
+  opacity: 0;
+  transform: translateY(-20px);
+  visibility: hidden;
+  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0s linear 0.4s;
+}
+
+.floating-warning #warningMessage {
+  font-size: 1rem;
+}
+
+.floating-warning #closeWarning {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+.floating-warning #closeWarning:hover {
+  color: #ccc;
+}

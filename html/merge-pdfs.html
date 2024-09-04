@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Merge PDFs</title>
+    <link rel="stylesheet" href="../css/merge-pdfs.css" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="assets/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+  <body>
+    <header>
+      <a href="../index.html" class="header-link">PDF Tools</a>
+    </header>
+    <div class="container">
+      <h2>Merge PDF Files</h2>
+      <form id="uploadForm">
+        <input
+          type="file"
+          id="pdfFiles"
+          name="pdfFiles"
+          class="file-input"
+          accept="application/pdf"
+          multiple
+        />
+        <ul id="fileList"></ul>
+        <div class="button-group">
+          <button type="button" id="mergeButton">Merge PDFs</button>
+          <button type="button" id="clearAllButton">Clear All</button>
+        </div>
+      </form>
+    </div>
+    <div id="floatingWarning" class="floating-warning">
+      <span id="warningMessage"></span>
+      <button id="closeWarning">&times;</button>
+    </div>
+    <script src="../js/pdf-lib.min.js"></script>
+    <script src="../js/merge-pdfs.js"></script>
+  </body>
+</html>
