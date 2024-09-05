@@ -1,29 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PDF Manager</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/split-pdfs.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../css/split-pdfs.css" />
+    <script src="../js/pdf-lib.min.js"></script>
+    <script src="../js/pdf.worker.min.js"></script>
+    <script src="../js/pdf@2.9.359.js"></script>
+    <script src="../js/split-pdfs.js"></script>
+  
+  </head>
+  <body>
     <header>
-        <h1>PDF Manager</h1>
+      <a href="../index.html" class="header-link">PDF Tools</a>
     </header>
 
     <div class="main-container">
-        <div class="button-container">
-            <label for="file-input" class="upload-btn">Upload PDF</label>
-            <input type="file" id="file-input" accept=".pdf" style="display: none;">
-            <button class="download-btn hidden">Download PDF</button>
-            <button class="undo-btn hidden">Undo Delete</button>
-        </div>
-        <div id="pdf-container"></div>
+      <div class="button-container">
+        <label for="file-input" class="upload-btn">Upload PDF</label>
+        <input
+          type="file"
+          id="file-input"
+          accept=".pdf"
+          style="display: none"
+        />
+        <button class="download-btn hidden">Download PDF</button>
+        <button class="undo-btn hidden">Undo Delete</button>
+      </div>
+      <div id="pdf-container"></div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
-    <script src="../js/split-pdfs.js"></script>
-</body>
+
+  </body>
 </html>

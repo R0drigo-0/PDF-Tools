@@ -17,17 +17,36 @@ body {
   min-height: 100vh;
 }
 
-header,
-footer {
-  background-color: var(--primary-color);
-  color: white;
-  text-align: center;
+header {
+  width: 100%;
   padding: 15px 0;
+  background-color: #fdfdfd;
+  border-bottom: 1px solid #dcdcdc;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
-header h1,
-footer p {
-  margin: 0;
+.header-link {
+  font-size: 2rem;
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: color 0.3s, transform 0.3s;
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 12px;
+}
+
+.header-link:hover {
+  color: #2ecc71;
+  transform: translateY(-3px);
+}
+
+.header-link:active {
+  background-color: transparent;
 }
 
 .main-container {
